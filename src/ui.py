@@ -1,6 +1,5 @@
 # User interface setup using Gradio
 
-
 import gradio as gr
 from document_processor import upload_document, process_document
 from question_answering import answer_question
