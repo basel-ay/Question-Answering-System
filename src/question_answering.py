@@ -1,4 +1,5 @@
 # Main logic for answering questions
+from document_processor import preprocess_document
 
 
 def answer_question(doc_bytes, question):
