@@ -1,23 +1,32 @@
 # Functions for processing uploaded documents.
 
-import PyPDF2  # Or appropriate library for your document formats.
-
 
 def preprocess_document(doc_bytes):
     """
+    Function to preprocess the document content.
+
     Args:
-        :param doc_bytes: The document to be processed.
+        doc_bytes (str): The path to the document file got from the uploaded file.
 
     Returns:
-        :rtype: str
+        str: The processed document content as a string.
     """
-    # Handle document format (text file: decode, PDF: extract text)
-    if doc_bytes.startswith(b"%PDF"):
-        pdf_reader = PyPDF2.PdfReader(doc_bytes)
-        text = ""
-        for page in pdf_reader.pages:
-            text += page.extract_text()
-    else:
-        text = doc_bytes.decode("utf-8")
-    # Additional cleaning steps (optional)
-    return text
+    try:
+        # Open the document file and read its content
+        with open(doc_bytes, "r") as my_file:
+            text = my_file.read()
+            # Additional cleaning steps can be added here (optional)
+
+            return text
+
+    except FileNotFoundError:
+        # Handle file not found error
+        print("Error: File not found.")
+
+        return None
+
+    except Exception as e:
+        # Handle any other errors gracefully and return an error message
+        print(f"Error: {str(e)}")
+
+        return None
