@@ -2,12 +2,23 @@
 
 # Import necessary libraries and modules
 from transformers import pipeline
-from document_processor import preprocess_document
-from database import create_server_connection
+from src.document_processor import preprocess_document
+from src.database import create_server_connection
+import os
+from dotenv import load_dotenv
 
 
-pw = "qwerasdf1@"
-connection = create_server_connection("localhost", "root", pw, "qa_database")
+# Load environment variables from .env file
+load_dotenv()
+
+# Get the database variables from environment variables
+DB_HOST = os.getenv("DB_HOST")
+DB_USER = os.getenv("DB_USER")
+DB_PASSWORD = os.getenv("DB_PASSWORD")
+DB_NAME = os.getenv("DB_NAME")
+
+# Stablish the connection to the database
+connection = create_server_connection(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME)
 
 # Load the pre-trained question answering model
 qa_model = pipeline("question-answering", model="deepset/roberta-base-squad2")  # For Arabic language
@@ -40,6 +51,10 @@ def answer_question(doc_bytes, question):
         # If not found in the database, use the AI model to answer the question
         # Use the pre-trained question answering model to answer the question
         answer = qa_model(question=question, context=context)["answer"]
+
+        # Store the new question-answer pair in the database
+        db_cursor.execute("INSERT INTO qa_table (question, answer) VALUES (%s, %s)", (question, answer))
+        connection.commit()
 
         return answer
 
