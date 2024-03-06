@@ -42,7 +42,7 @@ def find_similar_question(input_question):
 
         # If the similarity ratio exceeds a threshold, return the most similar question
         if (
-            most_similar_question and difflib.SequenceMatcher(None, input_question, most_similar_question[0]).ratio() > 0.85
+            most_similar_question and difflib.SequenceMatcher(None, input_question, most_similar_question[0]).ratio() > 0.8
         ):
             return most_similar_question[0]
         else:
