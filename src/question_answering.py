@@ -8,7 +8,6 @@ import os
 from dotenv import load_dotenv
 import difflib
 
-
 # Load environment variables from .env file
 load_dotenv()
 
@@ -22,10 +21,7 @@ DB_NAME = os.getenv("DB_NAME")
 connection = create_server_connection(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME)
 
 # Load the pre-trained question answering model
-qa_model = pipeline(
-    "question-answering", model="deepset/roberta-base-squad2"
-)  # For English language
-
+qa_model = pipeline("question-answering", model="deepset/roberta-base-squad2")  # For Arabic language
 
 def find_similar_question(input_question):
     """
@@ -42,17 +38,11 @@ def find_similar_question(input_question):
         all_questions = retrieve_all_questions_from_database()
 
         # Find the most similar question using difflib
-        most_similar_question = difflib.get_close_matches(
-            input_question, all_questions, n=1
-        )
+        most_similar_question = difflib.get_close_matches(input_question, all_questions, n=1)
 
         # If the similarity ratio exceeds a threshold, return the most similar question
         if (
-            most_similar_question
-            and difflib.SequenceMatcher(
-                None, input_question, most_similar_question[0]
-            ).ratio()
-            > 0.8
+            most_similar_question and difflib.SequenceMatcher(None, input_question, most_similar_question[0]).ratio() > 0.8
         ):
             return most_similar_question[0]
         else:
@@ -76,7 +66,6 @@ def retrieve_all_questions_from_database():
         cursor.execute("SELECT question FROM qa_table")
         questions = [row[0] for row in cursor.fetchall()]
         cursor.close()
-        connection.close()
         return questions
     except Exception as e:
         # Handle any errors gracefully and return an empty list
@@ -100,7 +89,6 @@ def retrieve_answer_from_database(question):
         cursor.execute("SELECT answer FROM qa_table WHERE question = %s", (question,))
         answer = cursor.fetchone()[0]
         cursor.close()
-        connection.close()
         return answer
     except Exception as e:
         # Handle any errors gracefully and return None
@@ -123,10 +111,7 @@ def answer_using_ai_model(context, question):
         answer = qa_model(question=question, context=context)["answer"]
         # Store the new question-answer pair in the database
         db_cursor = connection.cursor()
-        db_cursor.execute(
-            "INSERT INTO qa_table (question, answer) VALUES (%s, %s)",
-            (question, answer),
-        )
+        db_cursor.execute("INSERT INTO qa_table (question, answer) VALUES (%s, %s)", (question, answer))
         connection.commit()
         return answer
     except Exception as e:
