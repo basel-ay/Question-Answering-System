@@ -35,7 +35,7 @@ def create_server_connection(host_name, user_name, user_password, database_name)
 
     except Error as err:
         # Handle any errors that occur during connection establishment
-        print(f"Error: {err}")
-        return None
+        # print(f"Error: {err}")
+        return f"Error: {err}"
 
 
