@@ -31,7 +31,8 @@ def is_question_format(question):
     """
     try:
         # Define a regex pattern to match common question structures
-        question_pattern = r"^[^\W\d_]+\s*(?:\s+[^\W\d_]+)*\s*$"
+        question_pattern = r"^[^\W\d_]+\s+[^\W\d_]+(?:\s+[^\W\d_]+)*\s*(?:\?)?$"
+
 
         # Check if the input string matches the question pattern
         if re.match(question_pattern, question.strip()):
