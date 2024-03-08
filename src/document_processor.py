@@ -21,12 +21,12 @@ def preprocess_document(doc_bytes):
 
     except FileNotFoundError:
         # Handle file not found error
-        print("Error: File not found.")
+        # print("Error: File not found.")
 
-        return None
+        return "Error: File not found."
 
     except Exception as e:
         # Handle any other errors gracefully and return an error message
-        print(f"Error: {str(e)}")
+        # print(f"Error: {str(e)}")
 
-        return None
+        return f"Error: {str(e)}"
