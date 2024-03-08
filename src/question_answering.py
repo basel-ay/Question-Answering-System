@@ -3,9 +3,9 @@
 # Import necessary libraries and modules
 from transformers import pipeline
 
-from document_processor import preprocess_document
-from validation_checks import is_txt_file, is_question_format
-from database import create_server_connection
+from src.document_processor import preprocess_document
+from src.validation_checks import is_txt_file, is_question_format
+from src.database import create_server_connection
 
 import os
 from dotenv import load_dotenv
