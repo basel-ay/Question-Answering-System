@@ -120,4 +120,10 @@ Optimize the system's performance by implementing techniques such as caching, pa
 #### 10. Accessibility Features
 Ensure accessibility compliance by incorporating features such as screen reader compatibility, keyboard navigation, and color contrast adjustments to make the system accessible to users with disabilities.
 
+## Sample Images
+
+![image](https://github.com/basel-ay/Question-Answering-System/assets/64821137/e318ebf6-ee91-4a1e-a31c-fda2ee6eae9f)
+
+![image](https://github.com/basel-ay/Question-Answering-System/assets/64821137/8bb6ec92-9406-494a-b7eb-d5148908f883)
+
 
