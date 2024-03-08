@@ -8,7 +8,7 @@ from src.question_answering import answer_question # Import function for answeri
 interface = gr.Interface(
     fn=answer_question,  # Set the function to be executed
     inputs=[
-        gr.File(label="Upload Document"),
+        gr.File(label="Upload Document (.txt)"),
         "text",
     ],  # Define the input components (upload document and text question)
     outputs="text",  # Define the output component (text answer)
