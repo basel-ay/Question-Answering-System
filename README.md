@@ -65,10 +65,10 @@ Note:
 
 ## Dependencies
 
-- `gradio`
-- `transformers`
-- `mysql-connector-python`
-- `dotenv`
+- `gradio==4.20.1`
+- `transformers==4.38.2`
+- `mysql_connector_repackaged==0.3.1`
+- `python-dotenv==1.0.1`
 - `os-sys`
 - `regex`
 
