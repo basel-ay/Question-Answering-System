@@ -9,7 +9,7 @@ from src.question_answering import answer_question # Import function for answeri
 rules_text = """
 ## Follow the below rules:
 1. Upload a non-empty text document format (.txt).
-2. Enter a valid question format with two or more words in the text box provided.
+2. Enter a valid question format (non-word character, no digits, no special symbols) with two or more words in the text box provided.
 3. Click the 'Submit' button to get the answer.
 """
 
