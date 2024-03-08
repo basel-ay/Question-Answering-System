@@ -11,7 +11,7 @@ import difflib
 
 # Load environment variables from .env file
 load_dotenv()
-
+    
 # Get the database variables from environment variables
 DB_HOST = os.getenv("DB_HOST")
 DB_USER = os.getenv("DB_USER")
