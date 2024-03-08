@@ -84,17 +84,9 @@ Note:
 - `regex`
 
 
-## Modules
+## Project Structure and Key Files
 
-`question_answering.py`: Contains the core functions for answering questions using AI models and database queries.
-
-`validation_checks.py`: Contains functions for validating uploaded files and question formats.
-
-`document_processor.py`: Contains functions for preprocessing uploaded documents.
-
-`database.py`: Contains functions for establishing connections to a MySQL database.
-
-`test_question_answering.py`: Contains unit tests for functions.
+![image](https://github.com/basel-ay/Question-Answering-System/assets/64821137/9b25eb27-2db4-4c2e-88ee-4403248cd84f)
 
 ## Future Enhancements
 
