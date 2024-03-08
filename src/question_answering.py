@@ -3,6 +3,7 @@
 # Import necessary libraries and modules
 from transformers import pipeline
 from src.document_processor import preprocess_document
+from src.validation_checks import is_txt_file
 from src.database import create_server_connection
 import os
 from dotenv import load_dotenv
@@ -132,6 +133,14 @@ def answer_question(doc_bytes, question):
         str: The answer to the given question.
     """
     try:
+        # Check if the uploaded file is a text file
+        if not is_txt_file(doc_bytes):
+            return "Please upload a text file."
+        
+        # Check if a question is provided
+        if not question.strip():
+            return "Please enter a question."
+        
         # Preprocess the document content
         context = preprocess_document(doc_bytes)
 
