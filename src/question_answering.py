@@ -50,8 +50,8 @@ def find_similar_question(input_question):
             return None
     except Exception as e:
         # Handle any errors gracefully and return None
-        print(f"Error finding similar question: {e}")
-        return None
+        # print(f"Error finding similar question: {e}")
+        return f"Error finding similar question: {e}"
 
 
 # Function to retrieve all questions from the database
@@ -70,8 +70,8 @@ def retrieve_all_questions_from_database():
         return questions
     except Exception as e:
         # Handle any errors gracefully and return an empty list
-        print(f"Error retrieving questions from database: {e}")
-        return []
+        # print(f"Error retrieving questions from database: {e}")
+        return f"Error retrieving questions from database: {e}"
 
 
 # Function to retrieve answer from the database
@@ -93,8 +93,8 @@ def retrieve_answer_from_database(question):
         return answer
     except Exception as e:
         # Handle any errors gracefully and return None
-        print(f"Error retrieving answer from database: {e}")
-        return None
+        # print(f"Error retrieving answer from database: {e}")
+        return f"Error retrieving answer from database: {e}"
 
 
 def answer_using_ai_model(context, question):
@@ -117,8 +117,8 @@ def answer_using_ai_model(context, question):
         return answer
     except Exception as e:
         # Handle any errors gracefully and return None
-        print(f"Error answering question using AI model: {e}")
-        return None
+        # print(f"Error answering question using AI model: {e}")
+        return f"Error answering question using AI model: {e}"
 
 
 def answer_question(doc_bytes, question):
@@ -142,7 +142,7 @@ def answer_question(doc_bytes, question):
             return "Please enter a question."
         
         # Validate the format of the question.
-        if not is_question_format(question) and len(question.split()) >= 2:
+        if not is_question_format(question):
             return "Please enter a valid question format."
         
         # Preprocess the document content
@@ -162,5 +162,5 @@ def answer_question(doc_bytes, question):
 
     except Exception as e:
         # Handle any errors gracefully and return an error message
-        print(f"Error answering question: {e}")
-        return "Error: Failed to answer the question."
+        # print(f"Error answering question: {e}")
+        return f"Error: Failed to answer the question {e}"
