@@ -58,6 +58,12 @@ View graph at Excalidraw: [link](https://excalidraw.com/#json=JfsHGJJcY4_CwG2Ipv
 
 Note:
 * Ensure that the MySQL database is properly configured with the required table schema (qa_table).
+    
+    `CREATE TABLE qa_table (
+    question TEXT,
+    answer TEXT
+);`
+  
 * The .env file should contain the necessary environment variables for database connection.
   
     - `DB_HOST="ENTER_HOST_NAME"`
