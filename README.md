@@ -38,6 +38,12 @@ Excalidraw: https://excalidraw.com/#json=JfsHGJJcY4_CwG2IpvaYW,29apf2-RjXEH9dwOz
 
 4. Click the "Submit" button to get the answer.
 
+Note:
+* Ensure that the MySQL database is properly configured with the required table schema (qa_table).
+* The .env file should contain the necessary environment variables for database connection.
+* Text preprocessing steps may vary based on specific requirements and language models used.
+* Additional error handling and logging can be added as per the application's needs.
+
 ## Dependencies
 
 - `gradio`
@@ -46,3 +52,18 @@ Excalidraw: https://excalidraw.com/#json=JfsHGJJcY4_CwG2IpvaYW,29apf2-RjXEH9dwOz
 - `dotenv`
 - `os-sys`
 - `regex`
+
+
+## Modules
+
+`question_answering.py`: Contains the core functions for answering questions using AI models and database queries.
+
+`validation_checks.py`: Contains functions for validating uploaded files and question formats.
+
+`document_processor.py`: Contains functions for preprocessing uploaded documents.
+
+`database.py`: Contains functions for establishing connections to a MySQL database.
+
+`test_question_answering.py`: Containing unit tests for functions.
+
+
