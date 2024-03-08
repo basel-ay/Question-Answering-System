@@ -88,7 +88,7 @@ Note:
 
 `database.py`: Contains functions for establishing connections to a MySQL database.
 
-`test_question_answering.py`: Containing unit tests for functions.
+`test_question_answering.py`: Contains unit tests for functions.
 
 ## Future Enhancements
 
