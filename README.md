@@ -87,34 +87,34 @@ Note:
 
 ## Future Enhancements
 
-### 1. Multilingual Support
+#### 1. Multilingual Support
 Extend the system's capabilities to support multiple languages beyond Arabic. This enhancement would involve integrating additional pre-trained language models and implementing language detection mechanisms to handle queries in different languages.
 
-### 2. Interactive Feedback Mechanism
+#### 2. Interactive Feedback Mechanism
 Incorporate an interactive feedback mechanism where users can provide feedback on the accuracy and relevance of the system's answers. This feedback loop can be used to continuously improve the system's performance and refine its underlying models.
 
-### 3. Summarization
+#### 3. Summarization
 Integrate text summarization techniques to generate concise summaries of the uploaded documents. Summaries can help users quickly grasp the main points of the document and facilitate more efficient question-answering interactions.
 
-### 4. Customizable Thresholds
+#### 4. Customizable Thresholds
 Allow users to customize similarity thresholds for question matching and answer retrieval. Providing users with control over these thresholds can accommodate different use cases and preferences, leading to more personalized and accurate responses.
 
-### 5. Implement more Optimized ways for Similarity Checks for huge data
+#### 5. Implement more Optimized ways for Similarity Checks for huge data
 A more efficient approach for handling large databases is to leverage indexing and optimized search algorithms specifically designed for similarity search. Here's an optimized solution using Locality-Sensitive Hashing (LSH) for approximate nearest neighbor search
 
-### 6. Graphical User Interface (GUI) Enhancements
+#### 6. Graphical User Interface (GUI) Enhancements
 Enhance the graphical user interface with interactive visualizations, progress indicators, and real-time updates to improve the user experience. Visual cues and feedback mechanisms can make the system more engaging and intuitive to use.
 
-### 7. Integration with External Knowledge Sources
+#### 7. Integration with External Knowledge Sources
 Explore integration with external knowledge bases, ontologies, or APIs to enrich the system's knowledge and enhance its ability to provide comprehensive answers to a wide range of questions.
 
-### 8. Domain-specific Adaptation
+#### 8. Domain-specific Adaptation
 Develop mechanisms to adapt the system to specific domains or industries by fine-tuning the underlying models on domain-specific datasets. This adaptation can improve the relevance and accuracy of answers for domain-specific queries.
 
-### 9. Performance Optimization
+#### 9. Performance Optimization
 Optimize the system's performance by implementing techniques such as caching, parallel processing, and model optimization to reduce response times and resource consumption, especially for large documents or high volumes of concurrent requests.
 
-### 10. Accessibility Features
+#### 10. Accessibility Features
 Ensure accessibility compliance by incorporating features such as screen reader compatibility, keyboard navigation, and color contrast adjustments to make the system accessible to users with disabilities.
 
 
