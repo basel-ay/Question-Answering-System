@@ -2,16 +2,18 @@
 
 # Import necessary libraries and modules
 from transformers import pipeline
-from src.document_processor import preprocess_document
-from src.validation_checks import is_txt_file, is_question_format
-from src.database import create_server_connection
+
+from document_processor import preprocess_document
+from validation_checks import is_txt_file, is_question_format
+from database import create_server_connection
+
 import os
 from dotenv import load_dotenv
 import difflib
 
 # Load environment variables from .env file
 load_dotenv()
-    
+
 # Get the database variables from environment variables
 DB_HOST = os.getenv("DB_HOST")
 DB_USER = os.getenv("DB_USER")
