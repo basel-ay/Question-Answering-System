@@ -60,6 +60,12 @@ View graph at Excalidraw: [link](https://excalidraw.com/#json=JfsHGJJcY4_CwG2Ipv
 Note:
 * Ensure that the MySQL database is properly configured with the required table schema (qa_table).
 * The .env file should contain the necessary environment variables for database connection.
+  
+    - `DB_HOST="ENTER_HOST_NAME"`
+    - `DB_USER="ENTER_USER_NAME"`
+    - `DB_PASSWORD="ENTER_DB_PASSWORD"`
+    - `DB_NAME="ENTER_DB_NAME"`
+  
 * Text preprocessing steps may vary based on specific requirements and language models used.
 * Additional error handling and logging can be added as per the application's needs.
 
