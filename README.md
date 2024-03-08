@@ -41,7 +41,6 @@ View graph at Excalidraw: [link](https://excalidraw.com/#json=JfsHGJJcY4_CwG2Ipv
     ```
 
 3. Set up the MySQL database and configure the environment variables in the `.env` file with your database credentials.
-4. 
 
 ## Usage Instructions
 
