@@ -5,7 +5,7 @@ The Question Answering System is a tool designed to provide answers to user quer
 
 ![System_Graph](https://github.com/basel-ay/Question-Answering-System/assets/64821137/a3cf5fc0-f816-4a9b-b9c8-6130c1fa9b9f)
 
-Excalidraw: https://excalidraw.com/#json=JfsHGJJcY4_CwG2IpvaYW,29apf2-RjXEH9dwOz0MbwQ
+View graph at Excalidraw: [link](https://excalidraw.com/#json=JfsHGJJcY4_CwG2IpvaYW,29apf2-RjXEH9dwOz0MbwQ)
 
 
 ## Features
