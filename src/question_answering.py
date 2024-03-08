@@ -3,7 +3,7 @@
 # Import necessary libraries and modules
 from transformers import pipeline
 from src.document_processor import preprocess_document
-from src.validation_checks import is_txt_file
+from src.validation_checks import is_txt_file, is_question_format
 from src.database import create_server_connection
 import os
 from dotenv import load_dotenv
@@ -140,6 +140,10 @@ def answer_question(doc_bytes, question):
         # Check if a question is provided
         if not question.strip():
             return "Please enter a question."
+        
+        # Validate the format of the question.
+        if not is_question_format(question) and len(question.split()) >= 2:
+            return "Please enter a valid question format."
         
         # Preprocess the document content
         context = preprocess_document(doc_bytes)
